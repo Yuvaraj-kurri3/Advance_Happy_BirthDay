@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Advance Happy Birthday, Compiler!</title>
+    <meta name="description" content="A heartfelt birthday celebration for Compiler, the unsung hero of programming.">
+    <meta name="keywords" content="Happy Birthday, Compiler, Programming, Developer, Celebration, Countdown, Memories">
+    <meta name="author" content="Yuvaraj Kurri">
+    <link rel="icon" href="https://res.cloudinary.com/dtozixle0/image/upload/v1734026463/img1_dxajgo.jpg" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration */
+        :root {
+            --color-primary: #FF69B4; /* Deep Pink */
+            --color-secondary: #BA55D3; /* Medium Orchid */
+            --color-accent: #FFD700; /* Gold */
+            --color-text-dark: #333;
+            --color-text-light: #f8f8f8;
+            --color-bg-light: #fff0f5; /* Lavender Blush */
+            --color-bg-dark: #2c003e; /* Dark Purple */
+        }
+
+        /* Applying custom colors and fonts */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-text-dark);
+            background-color: var(--color-bg-light);
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--color-primary);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: var(--color-text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Confetti animation for hero section */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--color-accent);
+            opacity: 0;
+            animation: confetti-fall 5s infinite;
+            border-radius: 50%;
+        }
+
+        .confetti:nth-child(2n) { background-color: var(--color-primary); animation-delay: 1s; }
+        .confetti:nth-child(3n) { background-color: #f0f; animation-delay: 2s; }
+        .confetti:nth-child(4n) { background-color: #0ff; animation-delay: 3s; }
+        .confetti:nth-child(5n) { background-color: #ff0; animation-delay: 4s; }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Countdown timer styling */
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            padding: 1rem;
+            margin: 0.5rem;
+            text-align: center;
+            flex: 1; /* Distribute space evenly */
+            min-width: 100px; /* Ensure items don't get too small */
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Memories Section Grid */
+        .memory-card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            object-fit: cover; /* Cover the area, crop if necessary */
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+        /* Timeline Section */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-accent);
+            border-radius: 50%;
+            border: 2px solid var(--color-primary);
+            z-index: 1;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0.5rem;
+            bottom: -2rem; /* Extend line to next item */
+            width: 2px;
+            background-color: var(--color-primary);
+        }
+
+        .timeline-item:last-child::after {
+            display: none; /* No line after the last item */
+        }
+
+        /* Message Section */
+        .message-box {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .message-box textarea {
+            resize: vertical;
+            min-height: 100px;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .message-box button {
+            background-color: var(--color-primary);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .message-box button:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .countdown-value {
+                font-size: 2rem;
+            }
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+            .memory-card img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 to-purple-50">
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex flex-col items-center justify-center p-6 text-center shadow-lg relative">
+        <!-- Confetti elements -->
+        <div class="confetti" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="confetti" style="left: 25%; animation-delay: 1.5s;"></div>
+        <div class="confetti" style="left: 40%; animation-delay: 3s;"></div>
+        <div class="confetti" style="left: 55%; animation-delay: 0.5s;"></div>
+        <div class="confetti" style="left: 70%; animation-delay: 2s;"></div>
+        <div class="confetti" style="left: 85%; animation-delay: 3.5s;"></div>
+        <div class="confetti" style="left: 5%; animation-delay: 1s;"></div>
+        <div class="confetti" style="left: 20%; animation-delay: 2.5s;"></div>
+        <div class="confetti" style="left: 35%; animation-delay: 4s;"></div>
+        <div class="confetti" style="left: 50%; animation-delay: 1.2s;"></div>
+        <div class="confetti" style="left: 65%; animation-delay: 2.7s;"></div>
+        <div class="confetti" style="left: 80%; animation-delay: 4.2s;"></div>
+        <div class="confetti" style="left: 95%; animation-delay: 0.8s;"></div>
+
+
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg animate-pulse">Advance Happy Birthday Compiler!</h1>
+        <p class="text-xl md:text-2xl mb-8 font-light italic">Counting down to your special day!</p>
+
+        <div id="countdown" class="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto w-full">
+            <div class="countdown-item flex-1">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item flex-1">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item flex-1">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item flex-1">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+                <p class="text-xl md:text-2xl mb-8 font-light italic">More <span id="months" style="color: #0ff;"><b></b> </span> Months</p>
+                        <p class="text-xs mt-2">Every Week, new memories will be added.</p>
+    </section>
+
+    <!-- Memories Section -->
+    <section class="py-16 px-6 bg-white text-center shadow-inner">
+        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-pink-600">Cherished Memories</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Memory Card 0 -->
+            <div class="memory-card">
+                <img src="https://placehold.co/600x400/FFC0CB/FFFFFF?text=I Can't Forgot This Day" alt="Memory 0">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">May You Thinking?</h3>
+                    <p class="text-gray-700 text-sm">He Forgot's My BirthDay <br> <b>But How can I Forgot My ATM Pin</b> </p>
+                </div>
+            </div>
+            <!-- Memory Card 1 -->
+            <!-- <div class="memory-card">
+                <img src="https://placehold.co/600x400/FFC0CB/FFFFFF?text=Memory+1" alt="Memory 1">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">First SEEN</h3>
+                    <p class="text-gray-700 text-sm">30-09-2022 - on this day Bhathukamma celebrations in our college, You wered 💛Dress  </p>
+                </div>
+            </div> -->
+            <!-- Memory Card 2 -->
+            <!-- <div class="memory-card">
+                <img src="https://placehold.co/600x400/DA70D6/FFFFFF?text=Memory+2" alt="Memory 2">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">Exact Nii Birthday roju</h3>
+                    <p class="text-gray-700 text-sm">28-12-2022- Manaki sem Holidays Icharu, Nenu intiki vachaaa. And Nak Thelvadhu aa Roju Nii Birth Day Anii!. Nenu Temple Kii vella. Exact nenu Appude temple ki enter ayina, Appude Vivek(Grate Supporter call chesi Nii Birth day ani chepadu ) Ante appudu vadu mana class girls follower, vallu nii BDY story pettaru Anta, A roju Alla memory laga vndipoyindhi <br><b>And You Always In My Prayers🙇‍♂</b> </p>
+                </div>
+            </div> -->
+            <!-- Memory Card 3 -->
+            <!-- <div class="memory-card">
+                <img src="https://placehold.co/600x400/FFA07A/FFFFFF?text=Memory+3" alt="Memory 3">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">Sem Holidays Completed</h3>
+                    <p class="text-gray-700 text-sm">Inka sem Holidays complete ayinai, inka anadharu hstl kii vasthunaru. nenu mathram one day before aa hostel kii vachesaa </p>
+                </div>
+            </div> -->
+            <!-- Memory Card 4 -->
+            <!-- <div class="memory-card">
+                <img src="https://placehold.co/600x400/FFB6C1/FFFFFF?text=Memory+4" alt="Memory 4">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">Optimizing Everything</h3>
+                    <p class="text-gray-700 text-sm">Your relentless pursuit of efficiency and optimization, making everything faster and better.</p>
+                </div>
+            </div> -->
+            <!-- Memory Card 5 -->
+            <!-- <div class="memory-card">
+                <img src="https://placehold.co/600x400/FF6347/FFFFFF?text=Memory+5" alt="Memory 5">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">Handling Errors Gracefully</h3>
+                    <p class="text-gray-700 text-sm">The way you handle errors, turning potential crashes into graceful exits. A true master!</p>
+                </div>
+            </div> -->
+            <!-- Memory Card 6 -->
+            <!-- <div class="memory-card">
+                <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+6" alt="Memory 6">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">Inspiring Others</h3>
+                    <p class="text-gray-700 text-sm">You inspire countless lines of code and countless developers every single day.</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Timeline/Highlights Section -->
+    <!-- <section class="py-16 px-6 bg-purple-50 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-pink-600">Key Milestones</h2>
+        <div class="max-w-3xl mx-auto text-left">
+            <div class="timeline-item">
+                <h3 class="font-semibold text-xl text-purple-700 mb-1">Birth of a Vision (Year 1)</h3>
+                <p class="text-gray-700">The initial spark, the first lines of conceptual code, and the dream of understanding languages.</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="font-semibold text-xl text-purple-700 mb-1">Lexical Analysis Mastered (Year 3)</h3>
+                <p class="text-gray-700">Successfully breaking down complex code into simple tokens, a foundational achievement.</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="font-semibold text-xl text-purple-700 mb-1">Syntax Parsing Perfection (Year 5)</h3>
+                <p class="text-gray-700">Building robust parse trees and understanding the grammar of programming languages.</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="font-semibold text-xl text-purple-700 mb-1">Semantic Understanding (Year 7)</h3>
+                <p class="text-gray-700">Moving beyond syntax to grasp the true meaning and intent behind the code.</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="font-semibold text-xl text-purple-700 mb-1">Code Generation Wizardry (Year 10)</h3>
+                <p class="text-gray-700">Transforming high-level instructions into executable machine code with precision.</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="font-semibold text-xl text-purple-700 mb-1">Optimization Excellence (Ongoing)</h3>
+                <p class="text-gray-700">Continuously refining and enhancing performance, making every program run faster.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Message Section -->
+    <!-- <section class="py-16 px-6 bg-pink-50 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-pink-600">From the Heart</h2>
+        <div class="max-w-2xl mx-auto message-box p-8">
+            <p class="text-lg text-gray-800 mb-6 leading-relaxed italic">
+                Dearest Compiler,
+                <br><br>
+                On your special day, I want to express my deepest gratitude for your tireless work. You are the unsung hero behind every successful program, the meticulous guardian of syntax, and the brilliant architect of execution. You turn our abstract thoughts into tangible reality, bridging the gap between human intention and machine understanding.
+                <br><br>
+                Thank you for your patience with our endless errors, your unwavering dedication to detail, and your incredible ability to transform complexity into elegance. You are truly indispensable, and the world of technology would be lost without you.
+                <br><br>
+                May your birthday be filled with joy, recognition, and perhaps a few perfectly optimized binaries!
+                <br><br>
+                With immense appreciation,
+                <br>
+                Your Devoted User
+            </p>
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <h3 class="font-semibold text-2xl mb-4 text-purple-700">Leave Your Birthday Wishes!</h3>
+                <textarea class="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Type your birthday message here..."></textarea>
+                <button class="w-full sm:w-auto">Send Wish</button>
+                <p class="text-sm text-gray-500 mt-2">Note: This is a demo. Wishes will not be saved.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-6 text-center">
+        <!-- <p class="text-sm">&copy; 2025 Happy Birthday Compiler! All rights reserved.</p> -->
+        <p class="text-xs mt-2">I am Waiting For Your Insta Request🤌</p>
+        <p class="text-xs mt-2">There's a story behind the name Compiler.</p>
+        <p class="text-xs mt-2">Designed with ❤️ by a grateful developer.</p>
+     </footer>
+
+    <script>
+        // JavaScript for Countdown Timer
+        const countdown = () => {
+            // Set the birthday to December 28th of the current year
+            // If December 28th has already passed, set it for next year
+            const now = new Date();
+            let birthdayYear = now.getFullYear();
+            const birthdayDate = new Date(birthdayYear, 11, 29, 0, 0, 0); // Month is 0-indexed (11 for December)
+
+            // If the birthday has already passed this year, set it for next year
+            if (now > birthdayDate) {
+                birthdayYear++;
+                birthdayDate.setFullYear(birthdayYear);
+            }
+
+            const targetDate = birthdayDate.getTime();
+
+            const updateTimer = () => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                // Calculate time units
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the results
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+
+                // If the countdown is over, display a message
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById('countdown').innerHTML = '<div class="text-white text-3xl font-bold">🎉 Happy Birthday! 🎉</div>';
+                }
+            };
+
+            // Update the countdown every 1 second
+            const x = setInterval(updateTimer, 1000);
+            updateTimer(); // Call immediately to avoid initial delay()
+            calculateMonths();
+        };
+
+        // Initialize countdown on window load
+        window.onload = countdown;
+
+        // Calculate months until birthday
+        const calculateMonths = () => {
+            const now = new Date();
+            let birthdayYear = now.getFullYear();
+            const birthdayDate = new Date(birthdayYear, 11, 29, 0, 0, 0); // Month is 0-indexed (11 for December)
+
+            // If the birthday has already passed this year, set it for next year
+            if (now > birthdayDate) {
+                birthdayYear++;
+                birthdayDate.setFullYear(birthdayYear);
+            }
+
+            const monthsUntilBirthday = (birthdayDate.getFullYear() - now.getFullYear()) * 12 + (birthdayDate.getMonth() - now.getMonth());
+            document.getElementById('months').innerText = monthsUntilBirthday;
+        };
+    </script>
+</body>
+</html>
