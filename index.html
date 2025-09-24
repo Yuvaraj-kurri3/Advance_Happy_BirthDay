@@ -190,6 +190,21 @@
                 height: 150px;
             }
         }
+
+        #btnn{
+            
+            color: black;
+            padding: 3px;
+            border-radius: 0.75rem;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px solid pink;
+        }
+        #btnn:hover {
+            background-color:pink;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -310,14 +325,39 @@
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">28-12-2023</h3>
                     <p class="text-gray-700 text-sm">Exact Nii BirthDay roju 28-12-2023, daily clg kii vachinatu vachanu and waiting for you, and a roju saturday nvu clg kii vasthav ankunaa bu a rjou nvu cllg kii ralee😞.., neno entho excitment gaa vundee nik wish chedham ani but nvuu ralee😭.. <br> allla aa day complete ayindhi and 2023 year complete ayindhii.. <br> 2024 year satrt ayindhi and sankranthi holidays vachai, intiki vellam, sankranthi loo i found some of photos of You Nii insta hilights loo.. <br>Nii Bdy dress Green colour💚.. but aa dress challa bagunavv.. nd nii hair kudaa balee vuntadhii challa longg.. <br> ee youtube video loo <b>8:14 minutes</b> nunchi chudu andhuloo nvu vuntavvv.. <b><a href="https://www.youtube.com/watch?v=cWfLwpkoCbE">Click Here</a></b> </p>
+                    
                 </div>
             </div>
             <div class="memory-card">
-                <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+6" alt="Memory 6">
+                <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+7" alt="Memory 7">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">09-02-2024</h3>
                     <p class="text-gray-700 text-sm">Bhavani may be nik gurthuku vundhoo ledhoo theliyadhuu, nenu first time nitho oka 3 seconds matladina rojuu adhii, second floor 315 class room anukuntaa anthagaa idea ledhui ganii, nii water kada vunav and nenu class nundi biometric veyaniki vellthunna, exact steps kadaa nvu appude class kii velthuna exact ninu a steps kada apina matladudham anii, <br> <b>03: Bhavani Nitho Okasari matladalli..</b> <br> <br><b>32: Nak intreset ledhuu anavvv..</b> and within seconds akadinunchii velllipoyinavv..<br> Bhavani nak avaro chepinaru, a roju nitho matladainaa tharvathaa nvu intkivelli edchinav anta.. mari endhukoo emooo if navalla nvu edichi vuntee sorryyy..  <br> <b>And all the best for your mid Exams....</b>
                     </p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+8" alt="Memory 8">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">10-02-2024</h3>
+                    <p class="text-gray-700 text-sm">
+                        <b>Nvuu edchinav ani nak thelavduu,</b><br> After that day, ante next day again malli biometric kada 311 lab. nvu biometric kii lopaliki vellav and tharvathaa nenu kuda vasthunaa biometric vedham ani, nvu biometric vesi bayatiki vasthunavvv , nenu lab lokii entry avuthunaaa, exact door kada, malli adiginaa nitho matladalli ani but nvu em anale just <b>"Nik already chepagaa, nak intreset ledhu ani anavvvv😭"</b> , inka a roju nunchi ninuu chudam thapaa, inka okasari kuda matladudham ani anukolee, nvu appudu naa front kii vachinaa nene side kii velle vaniii, after that month ante february tharvathaa march loo  manaki freshers vunndee and flashmob kuda Aa roju white dress and freshers rojuu <span style="color: rgb(42, 205, 42);">Green</span> and <span style="color: maroon;">maroon </span> combination Dress.. a two days challa bagunavv, fest roju antha mandhi vunaa nenu mathramm nii side chusthu vundii poyaaa🥰..
+
+                     </p>
+                     Nvu Em ayina chepalli Anukuntee Chepuu 
+                      <div class="login-container">
+        <div class="login-container">
+        <form id="register-form" method="POST">
+            <input type="hidden" name="access_key" value="4bb46b2d-fcfb-49f9-9313-19d93577e7ed">
+           
+            <input type="text" id="text" name="text" placeholder="Your Message.." required>
+             
+             <button type="submit" style="border: 2px solid pink; border-radius: 5px; padding: 2px;">Submit</button>
+        </form>
+        <p id="message" style="color: black;"></p>
+    </div>
+    </div>
                 </div>
             </div>
         </div>
@@ -452,6 +492,54 @@
             const monthsUntilBirthday = (birthdayDate.getFullYear() - now.getFullYear()) * 12 + (birthdayDate.getMonth() - now.getMonth());
             document.getElementById('months').innerText = monthsUntilBirthday;
         };
-    </script>
+
+           // If all OK, proceed to submit
+  
+                 const form = document.getElementById('register-form');
+        const result = document.getElementById("message");
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // If all OK, proceed to submit
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            result.innerHTML = "Compiling...";
+
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = json.message;
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 500);
+            });
+    
+            </script>
 </body>
 </html>
