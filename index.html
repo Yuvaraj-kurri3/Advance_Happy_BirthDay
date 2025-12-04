@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,29 @@
     <meta name="description" content="A heartfelt birthday celebration for Compiler, the unsung hero of programming.">
     <meta name="keywords" content="Happy Birthday, Compiler, Programming, Developer, Celebration, Countdown, Memories">
     <meta name="author" content="Yuvaraj Kurri">
-    <link rel="icon" href="https://res.cloudinary.com/dtozixle0/image/upload/v1734026463/img1_dxajgo.jpg" type="image/x-icon">
+    <link rel="icon" href="https://res.cloudinary.com/dtozixle0/image/upload/v1734026463/img1_dxajgo.jpg"
+        type="image/x-icon">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         /* Custom Tailwind Configuration */
         :root {
-            --color-primary: #FF69B4; /* Deep Pink */
-            --color-secondary: #BA55D3; /* Medium Orchid */
-            --color-accent: #FFD700; /* Gold */
+            --color-primary: #FF69B4;
+            /* Deep Pink */
+            --color-secondary: #BA55D3;
+            /* Medium Orchid */
+            --color-accent: #FFD700;
+            /* Gold */
             --color-text-dark: #333;
             --color-text-light: #f8f8f8;
-            --color-bg-light: #fff0f5; /* Lavender Blush */
-            --color-bg-dark: #2c003e; /* Dark Purple */
+            --color-bg-light: #fff0f5;
+            /* Lavender Blush */
+            --color-bg-dark: #2c003e;
+            /* Dark Purple */
         }
 
         /* Applying custom colors and fonts */
@@ -29,10 +38,12 @@
             font-family: 'Poppins', sans-serif;
             color: var(--color-text-dark);
             background-color: var(--color-bg-light);
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             font-family: 'Dancing Script', cursive;
             color: var(--color-primary);
         }
@@ -55,15 +66,40 @@
             border-radius: 50%;
         }
 
-        .confetti:nth-child(2n) { background-color: var(--color-primary); animation-delay: 1s; }
-        .confetti:nth-child(3n) { background-color: #f0f; animation-delay: 2s; }
-        .confetti:nth-child(4n) { background-color: #0ff; animation-delay: 3s; }
-        .confetti:nth-child(5n) { background-color: #ff0; animation-delay: 4s; }
+        .confetti:nth-child(2n) {
+            background-color: var(--color-primary);
+            animation-delay: 1s;
+        }
+
+        .confetti:nth-child(3n) {
+            background-color: #f0f;
+            animation-delay: 2s;
+        }
+
+        .confetti:nth-child(4n) {
+            background-color: #0ff;
+            animation-delay: 3s;
+        }
+
+        .confetti:nth-child(5n) {
+            background-color: #ff0;
+            animation-delay: 4s;
+        }
 
         @keyframes confetti-fall {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
         }
 
         /* Countdown timer styling */
@@ -74,8 +110,10 @@
             padding: 1rem;
             margin: 0.5rem;
             text-align: center;
-            flex: 1; /* Distribute space evenly */
-            min-width: 100px; /* Ensure items don't get too small */
+            flex: 1;
+            /* Distribute space evenly */
+            min-width: 100px;
+            /* Ensure items don't get too small */
         }
 
         .countdown-value {
@@ -94,20 +132,22 @@
         .memory-card {
             background-color: white;
             border-radius: 1rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .memory-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         .memory-card img {
             width: 100%;
-            height: 200px; /* Fixed height for consistency */
-            object-fit: cover; /* Cover the area, crop if necessary */
+            height: 200px;
+            /* Fixed height for consistency */
+            object-fit: cover;
+            /* Cover the area, crop if necessary */
             border-top-left-radius: 1rem;
             border-top-right-radius: 1rem;
         }
@@ -137,20 +177,22 @@
             position: absolute;
             left: 5px;
             top: 0.5rem;
-            bottom: -2rem; /* Extend line to next item */
+            bottom: -2rem;
+            /* Extend line to next item */
             width: 2px;
             background-color: var(--color-primary);
         }
 
         .timeline-item:last-child::after {
-            display: none; /* No line after the last item */
+            display: none;
+            /* No line after the last item */
         }
 
         /* Message Section */
         .message-box {
             background-color: white;
             border-radius: 1rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .message-box textarea {
@@ -169,13 +211,13 @@
             padding: 0.75rem 1.5rem;
             border-radius: 0.75rem;
             transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .message-box button:hover {
             background-color: var(--color-secondary);
             transform: translateY(-2px);
-            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
         }
 
         /* Responsive adjustments */
@@ -183,30 +225,32 @@
             .countdown-value {
                 font-size: 2rem;
             }
+
             .countdown-label {
                 font-size: 0.8rem;
             }
+
             .memory-card img {
                 height: 150px;
             }
         }
-
-        
     </style>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QREPZ09KC8"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QREPZ09KC8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-QREPZ09KC8');
-</script>
+</script> -->
 </head>
+
 <body class="bg-gradient-to-br from-pink-50 to-purple-50">
 
     <!-- Hero Section -->
-    <section class="hero-section min-h-screen flex flex-col items-center justify-center p-6 text-center shadow-lg relative">
+    <section
+        class="hero-section min-h-screen flex flex-col items-center justify-center p-6 text-center shadow-lg relative">
         <!-- Confetti elements -->
         <div class="confetti" style="left: 10%; animation-delay: 0s;"></div>
         <div class="confetti" style="left: 25%; animation-delay: 1.5s;"></div>
@@ -223,7 +267,8 @@
         <div class="confetti" style="left: 95%; animation-delay: 0.8s;"></div>
 
 
-        <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg animate-pulse">Advance Happy Birthday Compiler!</h1>
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg animate-pulse">Advance Happy Birthday Compiler!
+        </h1>
         <p class="text-xl md:text-2xl mb-8 font-light italic">Counting down to your special day!</p>
 
         <div id="countdown" class="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto w-full">
@@ -244,8 +289,9 @@
                 <div class="countdown-label">Seconds</div>
             </div>
         </div>
-                <p class="text-xl md:text-2xl mb-8 font-light italic">More <span id="months" style="color: #0ff;"><b></b> </span> Months</p>
-                        <p class="text-xs mt-2">Every Week, new memories will be added.</p>
+        <p class="text-xl md:text-2xl mb-8 font-light italic">More <span id="months" style="color: #0ff;"><b></b>
+            </span> Months</p>
+        <p class="text-xs mt-2">Every Week, new memories will be added.</p>
     </section>
 
     <!-- Memories Section -->
@@ -257,7 +303,8 @@
                 <img src="https://placehold.co/600x400/FFC0CB/FFFFFF?text=I Can't Forgot This Day" alt="Memory 0">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">May You Thinking?</h3>
-                    <p class="text-gray-700 text-sm">He Forgot's My BirthDay <br> <b>But How can I Forgot My ATM Pin</b> </p>
+                    <p class="text-gray-700 text-sm">He Forgot's My BirthDay <br> <b>But How can I Forgot My ATM Pin</b>
+                    </p>
                 </div>
             </div>
             <!-- Memory Card 1 -->
@@ -265,9 +312,13 @@
                 <img src="https://placehold.co/600x400/FFC0CB/FFFFFF?text=Memory+1" alt="Memory 1">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">First SEEN</h3>
-                    <p class="text-gray-700 text-sm">Appatiki mana clg start 1 ayi kuda one month ayindhi, anthaka appudu observe cheyalee but, on this day 30-09-2022 - Bhathukamma celebrations in our college, You wered 💛Dress   
-                        <br>From that day to till now , naku veree ammai vallu ante intrest kuad radhu endhukoo  teliyadu, but you are the only one who is always in my mind, and I am always thinking about you. <br>  
-                    </p> 
+                    <p class="text-gray-700 text-sm">Appatiki mana clg start 1 ayi kuda one month ayindhi, anthaka
+                        appudu observe cheyalee but, on this day 30-09-2022 - Bhathukamma celebrations in our college,
+                        You wered 💛Dress
+                        <br>From that day to till now , naku veree ammai vallu ante intrest kuad radhu endhukoo
+                        teliyadu, but you are the only one who is always in my mind, and I am always thinking about you.
+                        <br>
+                    </p>
                 </div>
             </div>
             <!-- Memory Card 2 -->
@@ -275,7 +326,11 @@
                 <img src="https://placehold.co/600x400/DA70D6/FFFFFF?text=Memory+2" alt="Memory 2">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">Exact Nii Birthday roju</h3>
-                    <p class="text-gray-700 text-sm">28-12-2022- Manaki sem Holidays Icharu, Nenu intiki vachaaa. And Nak Thelvadhu aa Roju Nii Birth Day Anii!. Nenu Temple Kii vella. Exact nenu Appude temple ki enter ayina, Appude Vivek(Grate Supporter call chesi Nii Birth day ani chepadu ) Ante appudu vadu mana class girls follower, vallu nii BDY story pettaru Anta, A roju Alla memory laga vndipoyindhi <br><b>And You Always In My Prayers🙇‍♂</b> </p>
+                    <p class="text-gray-700 text-sm">28-12-2022- Manaki sem Holidays Icharu, Nenu intiki vachaaa. And
+                        Nak Thelvadhu aa Roju Nii Birth Day Anii!. Nenu Temple Kii vella. Exact nenu Appude temple ki
+                        enter ayina, Appude Vivek(Grate Supporter call chesi Nii Birth day ani chepadu ) Ante appudu
+                        vadu mana class girls follower, vallu nii BDY story pettaru Anta, A roju Alla memory laga
+                        vndipoyindhi <br><b>And You Always In My Prayers🙇‍♂</b> </p>
                 </div>
             </div>
             <!-- Memory Card 3 -->
@@ -283,8 +338,12 @@
                 <img src="https://placehold.co/600x400/FFA07A/FFFFFF?text=Memory+3" alt="Memory 3">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">Sem Holidays Completed</h3>
-                    <p class="text-gray-700 text-sm">Inka sem Holidays complete ayinai, inka anadharu hstl kii vasthunaru. nenu mathram one day before aa hostel kii vachesaa, from that day to 3rd year varaku, intiki vellinapudu alla one day before a hstl kii vachee vadiniii. <b> Only one reason ninu chudalli ani</b> <br> and <br><b>Congratulations for new <span style="color: pink; font-weight:lighter;">🏘</span></b>
-</p>
+                    <p class="text-gray-700 text-sm">Inka sem Holidays complete ayinai, inka anadharu hstl kii
+                        vasthunaru. nenu mathram one day before aa hostel kii vachesaa, from that day to 3rd year
+                        varaku, intiki vellinapudu alla one day before a hstl kii vachee vadiniii. <b> Only one reason
+                            ninu chudalli ani</b> <br> and <br><b>Congratulations for new <span
+                                style="color: pink; font-weight:lighter;">🏘</span></b>
+                    </p>
                 </div>
             </div>
             <!-- Memory Card 4 -->
@@ -292,7 +351,19 @@
                 <img src="https://placehold.co/600x400/FFB6C1/FFFFFF?text=Memory+4" alt="Memory 4">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">A Mini Operatoion</h3>
-                    <p class="text-gray-700 text-sm"> Alla mana first year complete ayindhi and you got good CGPA , Actually gaa niku wish chedham Anukuna nii number lekunde nathoo, Inka SBTET site open chesi check chesa Successfully I Found Your Mobile numbers and aa number note chesukonii mana clg grps loo Search Chesa But Akkadaa SBTET Site loi number tho match avalle , Inka research chesaa last kii I found Your Brother Number, but nik em wish cheyalle , So Allane Inka 2 -1 kuda off complete ayindhi, "Vinayaka Chavithi ", every time laga  intiki vachaa ,  from 1st to malli clg vachesariki nearly 1 week , every day maa frnds (Andharu kadhu 3 members only) kii call chesi adigevanii , Bro ivalla Bhavani vachindhi ani roju adigevanni nd mrng malli SBTET Attendance check chesavanii, Oka Clg kii vachindhi "HAMMAYAA "  Anukune Vanni, naku antha gurthuku ledhu one day Mamatha Mam only mana idharikii emo work chepindhi lab loo , Appudu try chesa First time matladudham ani but malli nvu alla react avuthavoo ani em matladakundaa vella(Ante same work kadhu lee Anthaga think cheyakuuu).. <br> <b> Advance happy Birthday More <i>123</i > days and Happy Vinayaka Chavithi </b>  <br>And You always in my Prayers🙇‍♂ </p>
+                    <p class="text-gray-700 text-sm"> Alla mana first year complete ayindhi and you got good CGPA ,
+                        Actually gaa niku wish chedham Anukuna nii number lekunde nathoo, Inka SBTET site open chesi
+                        check chesa Successfully I Found Your Mobile numbers and aa number note chesukonii mana clg grps
+                        loo Search Chesa But Akkadaa SBTET Site loi number tho match avalle , Inka research chesaa last
+                        kii I found Your Brother Number, but nik em wish cheyalle , So Allane Inka 2 -1 kuda off
+                        complete ayindhi, "Vinayaka Chavithi ", every time laga intiki vachaa , from 1st to malli clg
+                        vachesariki nearly 1 week , every day maa frnds (Andharu kadhu 3 members only) kii call chesi
+                        adigevanii , Bro ivalla Bhavani vachindhi ani roju adigevanni nd mrng malli SBTET Attendance
+                        check chesavanii, Oka Clg kii vachindhi "HAMMAYAA " Anukune Vanni, naku antha gurthuku ledhu one
+                        day Mamatha Mam only mana idharikii emo work chepindhi lab loo , Appudu try chesa First time
+                        matladudham ani but malli nvu alla react avuthavoo ani em matladakundaa vella(Ante same work
+                        kadhu lee Anthaga think cheyakuuu).. <br> <b> Advance happy Birthday More <i>123</i> days and
+                            Happy Vinayaka Chavithi </b> <br>And You always in my Prayers🙇‍♂ </p>
                 </div>
             </div>
             <!-- Memory Card 5 -->
@@ -300,7 +371,17 @@
                 <img src="https://placehold.co/600x400/FF6347/FFFFFF?text=Memory+5" alt="Memory 5">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">16-10-2023</h3>
-                    <p class="text-gray-700 text-sm"> malli dasara holidays vachai , andharanm intiki vellam, malli hstl kii vacham.. this day <b>16-10-2023</b> nii insta account dhorikindhi. follow kottina and msg chesa <img src="https://res.cloudinary.com/dtozixle0/image/upload/v1760622558/instamsg_btm0vl.jpg" alt="InstaMsg"  style="border-radius: 5px; height: 3in;">  but nvu Request accept cheyalle kabatti. naa account velli Request padathadhii so nvu chudav lee anukunnaa but nvuu chusavv and nenu msg chesa ani <b> nvu instagram delete chedham anukunav anta</b> but mii frnds vadhu anaru ani delete cheyalle antaa.. but adhi entha varakoo nijamoo Thelvadhu.. <br> <b>if adhi nijam ayithe Sorry</b> <br>and appati nunchi nik inga insta loo em msg cheyalle.. <br> <b>August-2023 loo nvu instagram account create chesav.. </b> <br> Lastday roju chepav gaa Request accept chestha ani Cheyochugaa🤌.. nik em msg cheyaa..<br>
+                    <p class="text-gray-700 text-sm"> malli dasara holidays vachai , andharanm intiki vellam, malli hstl
+                        kii vacham.. this day <b>16-10-2023</b> nii insta account dhorikindhi. follow kottina and msg
+                        chesa <img
+                            src="https://res.cloudinary.com/dtozixle0/image/upload/v1760622558/instamsg_btm0vl.jpg"
+                            alt="InstaMsg" style="border-radius: 5px; height: 3in;"> but nvu Request accept cheyalle
+                        kabatti. naa account velli Request padathadhii so nvu chudav lee anukunnaa but nvuu chusavv and
+                        nenu msg chesa ani <b> nvu instagram delete chedham anukunav anta</b> but mii frnds vadhu anaru
+                        ani delete cheyalle antaa.. but adhi entha varakoo nijamoo Thelvadhu.. <br> <b>if adhi nijam
+                            ayithe Sorry</b> <br>and appati nunchi nik inga insta loo em msg cheyalle.. <br>
+                        <b>August-2023 loo nvu instagram account create chesav.. </b> <br> Lastday roju chepav gaa
+                        Request accept chestha ani Cheyochugaa🤌.. nik em msg cheyaa..<br>
                         <!-- Alla  Months complete ayindhi malii december vachindhi , <b>28-12-2023</b> and nvu clg kii vasthav ani anukunnaa but a roju nvu ralee, vasthe wish chedham and chocolate idham anumkuna but nvu ralee and a roju nii bdy ani only vivek gadiki mathram thelsu (may be some boys kuda thelusu anukunta becz vallu girls follow avutharu gaa social media loo..) inka vad chala encourage chesind, ivalla nvu wish cheyalli raa ani but nvu ralee and nik msg chedham ana     -->
                     </p>
                 </div>
@@ -310,15 +391,30 @@
                 <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+6" alt="Memory 6">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">28-12-2023</h3>
-                    <p class="text-gray-700 text-sm">Exact Nii BirthDay roju 28-12-2023, daily clg kii vachinatu vachanu and waiting for you, and a roju saturday nvu clg kii vasthav ankunaa bu a rjou nvu cllg kii ralee😞.., neno entho excitment gaa vundee nik wish chedham ani but nvuu ralee😭.. <br> allla aa day complete ayindhi and 2023 year complete ayindhii.. <br> 2024 year satrt ayindhi and sankranthi holidays vachai, intiki vellam, sankranthi loo i found some of photos of You Nii insta hilights loo.. <br>Nii Bdy dress Green colour💚.. but aa dress challa bagunavv.. nd nii hair kudaa balee vuntadhii challa longg.. <br> ee youtube video loo <b>8:14 minutes</b> nunchi chudu andhuloo nvu vuntavvv.. <b><a href="https://www.youtube.com/watch?v=cWfLwpkoCbE">Click Here</a></b> </p>
-                    
+                    <p class="text-gray-700 text-sm">Exact Nii BirthDay roju 28-12-2023, daily clg kii vachinatu vachanu
+                        and waiting for you, and a roju saturday nvu clg kii vasthav ankunaa bu a rjou nvu cllg kii
+                        ralee😞.., neno entho excitment gaa vundee nik wish chedham ani but nvuu ralee😭.. <br> allla aa
+                        day complete ayindhi and 2023 year complete ayindhii.. <br> 2024 year satrt ayindhi and
+                        sankranthi holidays vachai, intiki vellam, sankranthi loo i found some of photos of You Nii
+                        insta hilights loo.. <br>Nii Bdy dress Green colour💚.. but aa dress challa bagunavv.. nd nii
+                        hair kudaa balee vuntadhii challa longg.. <br> ee youtube video loo <b>8:14 minutes</b> nunchi
+                        chudu andhuloo nvu vuntavvv.. <b><a href="https://www.youtube.com/watch?v=cWfLwpkoCbE">Click
+                                Here</a></b> </p>
+
                 </div>
             </div>
             <div class="memory-card">
                 <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+7" alt="Memory 7">
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">09-02-2024</h3>
-                    <p class="text-gray-700 text-sm">Bhavani may be nik gurthuku vundhoo ledhoo theliyadhuu, nenu first time nitho oka 3 seconds matladina rojuu adhii, second floor 315 class room anukuntaa anthagaa idea ledhui ganii, nii water kada vunav and nenu class nundi biometric veyaniki vellthunna, exact steps kadaa nvu appude class kii velthuna exact ninu a steps kada apina matladudham anii, <br> <b>03: Bhavani Nitho Okasari matladalli..</b> <br> <br><b>32: Nak intreset ledhuu anavvv..</b> and within seconds akadinunchii velllipoyinavv..<br> Bhavani nak avaro chepinaru, a roju nitho matladainaa tharvathaa nvu intkivelli edchinav anta.. mari endhukoo emooo if navalla nvu edichi vuntee sorryyy..  <br> <b>And all the best for your mid Exams....</b>
+                    <p class="text-gray-700 text-sm">Bhavani may be nik gurthuku vundhoo ledhoo theliyadhuu, nenu first
+                        time nitho oka 3 seconds matladina rojuu adhii, second floor 315 class room anukuntaa anthagaa
+                        idea ledhui ganii, nii water kada vunav and nenu class nundi biometric veyaniki vellthunna,
+                        exact steps kadaa nvu appude class kii velthuna exact ninu a steps kada apina matladudham anii,
+                        <br> <b>03: Bhavani Nitho Okasari matladalli..</b> <br> <br><b>32: Nak intreset ledhuu
+                            anavvv..</b> and within seconds akadinunchii velllipoyinavv..<br> Bhavani nak avaro
+                        chepinaru, a roju nitho matladainaa tharvathaa nvu intkivelli edchinav anta.. mari endhukoo
+                        emooo if navalla nvu edichi vuntee sorryyy.. <br> <b>And all the best for your mid Exams....</b>
                     </p>
                 </div>
             </div>
@@ -328,64 +424,122 @@
                 <div class="p-6">
                     <h3 class="font-semibold text-xl mb-2 text-purple-700">10-02-2024</h3>
                     <p class="text-gray-700 text-sm">
-                        <b>Nvuu edchinav ani nak thelavduu,</b><br> After that day, ante next day again malli biometric kada 311 lab. nvu biometric kii lopaliki vellav and tharvathaa nenu kuda vasthunaa biometric vedham ani, nvu biometric vesi bayatiki vasthunavvv , nenu lab lokii entry avuthunaaa, exact door kada, malli adiginaa nitho matladalli ani but nvu em anale just <b>"Nik already chepagaa, nak intreset ledhu ani anavvvv😭"</b> , inka a roju nunchi ninuu chudam thapaa, inka okasari kuda matladudham ani anukolee, nvu appudu naa front kii vachinaa nene side kii velle vaniii, after that month ante february tharvathaa march loo  manaki freshers vunndee and flashmob kuda Aa roju white dress and freshers rojuu <span style="color: rgb(42, 205, 42);">Green</span> and <span style="color: maroon;">maroon </span> combination Dress.. a two days challa bagunavv, fest roju antha mandhi vunaa nenu mathramm nii side chusthu vundii poyaaa🥰..
+                        <b>Nvuu edchinav ani nak thelavduu,</b><br> After that day, ante next day again malli biometric
+                        kada 311 lab. nvu biometric kii lopaliki vellav and tharvathaa nenu kuda vasthunaa biometric
+                        vedham ani, nvu biometric vesi bayatiki vasthunavvv , nenu lab lokii entry avuthunaaa, exact
+                        door kada, malli adiginaa nitho matladalli ani but nvu em anale just <b>"Nik already chepagaa,
+                            nak intreset ledhu ani anavvvv😭"</b> , inka a roju nunchi ninuu chudam thapaa, inka okasari
+                        kuda matladudham ani anukolee, nvu appudu naa front kii vachinaa nene side kii velle vaniii,
+                        after that month ante february tharvathaa march loo manaki freshers vunndee and flashmob kuda Aa
+                        roju white dress and freshers rojuu <span style="color: rgb(42, 205, 42);">Green</span> and
+                        <span style="color: maroon;">maroon </span> combination Dress.. a two days challa bagunavv, fest
+                        roju antha mandhi vunaa nenu mathramm nii side chusthu vundii poyaaa🥰..
 
-                     </p>
-                    
+                    </p>
+
                 </div>
             </div>
             <div class="memory-card">
-                    <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+9" alt="Memory 9">
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl mb-2 text-purple-700">4rth SEM EXAMS</h3>
-                        <p class="text-gray-700 text-sm">
-                            <p>Uff 2nd year complete avadanikii ochindhii, again malli sem start ayindhii, andhariki sem fast gaa complete kavalli ani anukuntaruu  but nak mathram inka late vachi vunte bagund ani anipichedhii, malli sem complete ayithe anadharu intki potharuu 2 Months, ninuu chudatanikii vundadhuu.. alla anukune vani but vachina time table change kadhu and timekuda agadhuuu.., all mana sem kuda complete ayindhi and adhi last exam <b>OS</b> exam complete ayindhii anadharam seminar hall kii velthunam, nvu 3rd floor loo vunav and nenu 2nd floor vunaa, manam biometric vestham gaa <b>Room No :332</b> room left side, wall kada nvu emo paina vunam, mii frnds kosam waiting and nenu niku koncham oppisite loo kindha vunaa, Alla okasari left side kii paikii chusaa, exact gaaa nvu atu chusthanvoo Thelvadhu but nenu sudden gaa nenu nikalee okasari gaa sudden gaa turn ayi chusaaa and nvu kuda chusavv alla oka 5-6 section chusav nenu ninnu chusaa. <b>Asalu a moment veree levell nakuu..</b> Adhi Alla mind looo vundii poyindhii may be nik gurthukuu vundhoo ledhoo Thelvadhu.. Alla mana 2nd year complete ayindhi...  </p>  <b>  <br> Nitho Direct Chepallekaa, naa feelings ani indhuloo Dhachaaa.. <button style="border:2px solid rgb(255, 181, 193); border-radius: 5px;"> <a href="https://www.instagram.com/yuva_beatz_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> Click here..</a></button> </b>
+                <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+9" alt="Memory 9">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">4rth SEM EXAMS</h3>
+                    <p class="text-gray-700 text-sm">
+                    <p>Uff 2nd year complete avadanikii ochindhii, again malli sem start ayindhii, andhariki sem fast
+                        gaa complete kavalli ani anukuntaruu but nak mathram inka late vachi vunte bagund ani
+                        anipichedhii, malli sem complete ayithe anadharu intki potharuu 2 Months, ninuu chudatanikii
+                        vundadhuu.. alla anukune vani but vachina time table change kadhu and timekuda agadhuuu.., all
+                        mana sem kuda complete ayindhi and adhi last exam <b>OS</b> exam complete ayindhii anadharam
+                        seminar hall kii velthunam, nvu 3rd floor loo vunav and nenu 2nd floor vunaa, manam biometric
+                        vestham gaa <b>Room No :332</b> room left side, wall kada nvu emo paina vunam, mii frnds kosam
+                        waiting and nenu niku koncham oppisite loo kindha vunaa, Alla okasari left side kii paikii
+                        chusaa, exact gaaa nvu atu chusthanvoo Thelvadhu but nenu sudden gaa nenu nikalee okasari gaa
+                        sudden gaa turn ayi chusaaa and nvu kuda chusavv alla oka 5-6 section chusav nenu ninnu chusaa.
+                        <b>Asalu a moment veree levell nakuu..</b> Adhi Alla mind looo vundii poyindhii may be nik
+                        gurthukuu vundhoo ledhoo Thelvadhu.. Alla mana 2nd year complete ayindhi... </p> <b> <br> Nitho
+                        Direct Chepallekaa, naa feelings ani indhuloo Dhachaaa.. <button
+                            style="border:2px solid rgb(255, 181, 193); border-radius: 5px;"> <a
+                                href="https://www.instagram.com/yuva_beatz_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                                Click here..</a></button> </b>
+                    </p>
+
+                    <div class="login-container">
+
+                        <br>
+                        <p> <b>Happy Dussheraa..💓</b>
                         </p>
-                  
-                        <div class="login-container">
-            
-         <br><p> <b>Happy Dussheraa..💓</b>
-        </p>
-        </div>
                     </div>
+                </div>
             </div>
-                <div class="memory-card">
-                    <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+10" alt="Memory 10">
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl mb-2 text-purple-700">02-05-2024</h3>
-                        <p class="text-gray-700 text-sm">
-                            alla mana 2nd year sem exams kuda complete ayinai,  Industrail Training attupovalli ani alochisthunaru alla, 2 days complete ayinai <b>May-2-2024</b>, For the first time niku whatsapp loo msg chesinna roju, 1st year nnunchiii nii number vundee but appudu msg cheyalee, endhukoo emo niku msg cheyalli antee bhayamm gaa vundee , andhukee alla 2 years wait chesa msg cheyakundaaa whatsapp loo, elgaina niku msg cheyalli bayam lekundaa nikuu a roju msg chesaaa Luckly nikanchii Reply vochindhiii☺️.... <br>alla challa sepu chat chesavvv, nenu aa roju hstl nundi intiki velthunaa, nik bus start ayinapuduu msg chesaaa and inkoo 10 minutes loo intikii velthaa, anthaa speu chat chesavvv.. appudu aa happiness vereeee.... <br> <img src="https://res.cloudinary.com/dtozixle0/image/upload/v1760622461/WhatsApp_FM_fix0a8.jpg" alt="" style="height:min-content; border-radius: 10px;">
-                         </p>
-                    </div>
-                    <p>🩷....</p>
+            <div class="memory-card">
+                <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+10" alt="Memory 10">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">02-05-2024</h3>
+                    <p class="text-gray-700 text-sm">
+                        alla mana 2nd year sem exams kuda complete ayinai, Industrail Training attupovalli ani
+                        alochisthunaru alla, 2 days complete ayinai <b>May-2-2024</b>, For the first time niku whatsapp
+                        loo msg chesinna roju, 1st year nnunchiii nii number vundee but appudu msg cheyalee, endhukoo
+                        emo niku msg cheyalli antee bhayamm gaa vundee , andhukee alla 2 years wait chesa msg
+                        cheyakundaaa whatsapp loo, elgaina niku msg cheyalli bayam lekundaa nikuu a roju msg chesaaa
+                        Luckly nikanchii Reply vochindhiii☺️.... <br>alla challa sepu chat chesavvv, nenu aa roju hstl
+                        nundi intiki velthunaa, nik bus start ayinapuduu msg chesaaa and inkoo 10 minutes loo intikii
+                        velthaa, anthaa speu chat chesavvv.. appudu aa happiness vereeee.... <br> <img
+                            src="https://res.cloudinary.com/dtozixle0/image/upload/v1760622461/WhatsApp_FM_fix0a8.jpg"
+                            alt="" style="height:min-content; border-radius: 10px;">
+                    </p>
+                </div>
+                <p>🩷....</p>
             </div>
-              <div class="memory-card">
-                    <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+11" alt="Memory 11">
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl mb-2 text-purple-700">Training Time..</h3>
-                        <p class="text-gray-700 text-sm">
-                            alla mana Training process kudaa start ayindhii, fee katalli ani anaruu clg vallu, malli ECIL vochaa and mana class kuda vocharu.. miru kudaa vostharu anii anukunaaa but miru already vochii velinaruu antaa😞..,  a roju challa dispoint ayinaa.. but em cheyalem gaa soo training start ayevarakuu waitt chesaaa ,  training appudoo start ayindhii nenu vachesarakii late ayindhii training kii, so every vivek broo kii call chesi adigevanii arey bhavani vochindhiii raleedhaa anii alla nearly 10 days adigivenii.. and after 10 days tharvathaa nenu training kii vochaa and nenu vachee sariki already NSIC  vallu groups decide chesaruu, nak dharidhram akuvaa lee 'we are different gropus' so ingaa em cheyalem gaa.. alla 2 monthss ayindhiii project select chesukunamm and 1st review day vochindhiii, 1st group (1-30) and 2nd group(31-60) ,so memu 1st nenu vellali gaa review velii review complete chesukonii, nikosamm ani next day kudaa sheriguda loo vundee vanii (only for you...), edho okati chepi clg kii kudaa vochaa (onlyy ninnu chudalli aniii).. <br><b>i have yours childhood photo😘🥰..</b> 
-                            <br>
-                            <b><i>More 2 Months</i></b>
-                         </p>
-                    </div>
-                    <p>🩷....</p>
+            <div class="memory-card">
+                <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+11" alt="Memory 11">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">Training Time..</h3>
+                    <p class="text-gray-700 text-sm">
+                        alla mana Training process kudaa start ayindhii, fee katalli ani anaruu clg vallu, malli ECIL
+                        vochaa and mana class kuda vocharu.. miru kudaa vostharu anii anukunaaa but miru already vochii
+                        velinaruu antaa😞.., a roju challa dispoint ayinaa.. but em cheyalem gaa soo training start
+                        ayevarakuu waitt chesaaa , training appudoo start ayindhii nenu vachesarakii late ayindhii
+                        training kii, so every vivek broo kii call chesi adigevanii arey bhavani vochindhiii raleedhaa
+                        anii alla nearly 10 days adigivenii.. and after 10 days tharvathaa nenu training kii vochaa and
+                        nenu vachee sariki already NSIC vallu groups decide chesaruu, nak dharidhram akuvaa lee 'we are
+                        different gropus' so ingaa em cheyalem gaa.. alla 2 monthss ayindhiii project select chesukunamm
+                        and 1st review day vochindhiii, 1st group (1-30) and 2nd group(31-60) ,so memu 1st nenu vellali
+                        gaa review velii review complete chesukonii, nikosamm ani next day kudaa sheriguda loo vundee
+                        vanii (only for you...), edho okati chepi clg kii kudaa vochaa (onlyy ninnu chudalli aniii)..
+                        <br><b>i have yours childhood photo😘🥰..</b>
+                        <br>
+                        <b><i>More 2 Months</i></b>
+                    </p>
+                </div>
+                <p>🩷....</p>
             </div>
 
-             <div class="memory-card">
-                    <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+12" alt="Memory 12">
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl mb-2 text-purple-700">Training Completed..</h3>
-                        <p class="text-gray-700 text-sm">
-                            Training time loo chala vunde nithoo matladalli ani, but endhukoo theliyanii Bhayammm, aa bhayammee ini days apindhi , nitho matladudhamm ani chala try chesaa but matladalekaaa poyinaaa🥲.. <br> 2 times anukuntaa nunchii call vachindhi mana training time loo , ante nvu chyeale lee mii frnds chesaroo or touch ayindhii anukuntaa, naa heartbeat endhukoo peruguthaa vuntadhii anthee leee , nii peru vintaneee naa heartbeat eto pothadhii , nii kanchi missed call vochindhiii antee aa mathramm vuntadhiii, naa bad luck one month manakii online clasess petinaruu😔,  nealry 2 months nii  chudalee 1month online classes and inkoo month naku fever vochii intiki vochiii motham intikadanee vunaa , a one month loo first 2 days hospital looo vunaa, endhukoo thelavd vukee vivek kanikii msg chese vanii (arey bhavani vochindhaa? ) adigivanii.. emo inga nvu vochaav ante adhi edho thelayinii happiness nakuu, nenu akkada lekunaaa happy gaa feel avevanii, inKa training period kuda end ayindhiii , mana 4rth sem loo anukunaa allagayina training loo matladalli, hstl loo night antha full confidencee gaa vunde vani matladalli but class Raganee motham smahhh , slow fear comingggg , fear++++.. from that nunchii ipppativaraku mundhu edhi anukonuu , edhi ayithee adhe ayithadhii anukuntaa <br>
-                             <br>
-                            <b><i>More 1 Month to My Special Day(naa bdy kuda anthagaa wait cheyaleee..)</i>
-                           <br> 
+            <div class="memory-card">
+                <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Memory+12" alt="Memory 12">
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">Training Completed..</h3>
+                    <p class="text-gray-700 text-sm">
+                        Training time loo chala vunde nithoo matladalli ani, but endhukoo theliyanii Bhayammm, aa
+                        bhayammee ini days apindhi , nitho matladudhamm ani chala try chesaa but matladalekaaa
+                        poyinaaa🥲.. <br> 2 times anukuntaa nunchii call vachindhi mana training time loo , ante nvu
+                        chyeale lee mii frnds chesaroo or touch ayindhii anukuntaa, naa heartbeat endhukoo peruguthaa
+                        vuntadhii anthee leee , nii peru vintaneee naa heartbeat eto pothadhii , nii kanchi missed call
+                        vochindhiii antee aa mathramm vuntadhiii, naa bad luck one month manakii online clasess
+                        petinaruu😔, nealry 2 months nii chudalee 1month online classes and inkoo month naku fever
+                        vochii intiki vochiii motham intikadanee vunaa , a one month loo first 2 days hospital looo
+                        vunaa, endhukoo thelavd vukee vivek kanikii msg chese vanii (arey bhavani vochindhaa? )
+                        adigivanii.. emo inga nvu vochaav ante adhi edho thelayinii happiness nakuu, nenu akkada
+                        lekunaaa happy gaa feel avevanii, inKa training period kuda end ayindhiii , mana 4rth sem loo
+                        anukunaa allagayina training loo matladalli, hstl loo night antha full confidencee gaa vunde
+                        vani matladalli but class Raganee motham smahhh , slow fear comingggg , fear++++.. from that
+                        nunchii ipppativaraku mundhu edhi anukonuu , edhi ayithee adhe ayithadhii anukuntaa <br>
+                        <br>
+                        <b><i>More 1 Month to My Special Day(naa bdy kuda anthagaa wait cheyaleee..)</i>
+                            <br>
                             only for Niku Bdy Wish cheyalli anii..
-                            </b>
-                         </p>
-                    </div>
-                    <p>🩷....</p>
+                        </b>
+                    </p>
+                </div>
+                <p>🩷....</p>
             </div>
         </div>
     </section>
@@ -449,9 +603,9 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 px-6 text-center">
-          <p class="text-xs mt-2">There's a story behind the name Compiler.</p>
+        <p class="text-xs mt-2">There's a story behind the name Compiler.</p>
         <p class="text-xs mt-2">Designed with ❤️ by a grateful developer.</p>
-     </footer>
+    </footer>
 
     <script>
         // JavaScript for Countdown Timer
@@ -518,11 +672,11 @@
             document.getElementById('months').innerText = monthsUntilBirthday;
         };
 
-           // If all OK, proceed to submit
-  
-                 const form = document.getElementById('register-form');
+        // If all OK, proceed to submit
+
+        const form = document.getElementById('register-form');
         const result = document.getElementById("message");
-        form.addEventListener('submit', async function(e) {
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             // If all OK, proceed to submit
@@ -533,13 +687,13 @@
             result.innerHTML = "Compiling...";
 
             fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                })
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
                 .then(async (response) => {
                     let json = await response.json();
                     if (response.status == 200) {
@@ -553,7 +707,7 @@
                     console.log(error);
                     result.innerHTML = "Something went wrong!";
                 })
-                .then(function() {
+                .then(function () {
                     form.reset();
                     setTimeout(() => {
                         result.style.display = "none";
@@ -563,8 +717,9 @@
             setTimeout(() => {
                 window.location.href = "index.html";
             }, 500);
-            });
-    
-            </script>
+        });
+
+    </script>
 </body>
+
 </html>
